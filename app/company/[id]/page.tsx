@@ -1,7 +1,6 @@
 import prisma from '@/lib/prisma';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-  // Need to await the params Promise to access the id property
   const { id } = await params;
   
   const company = await prisma.company.findUnique({
@@ -12,7 +11,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     return (
       <div className="min-h-screen bg-[#f9f9f9] flex items-center justify-center text-[#333]">
         <div className="bg-white p-8 rounded-2xl shadow-md">
-          <h1 className="text-2xl font-bold text-center text-[#C92228]">Company Not Found</h1>
+          <h1 className="text-2xl font-semibold text-center text-[#C92228]"> Company Not Found! Please Verify the correct Company Id and try again. </h1>
         </div>
       </div>
     );
@@ -89,10 +88,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
           </section>
         ))}
       </main>
-
-      <footer className="text-center p-6 bg-[#392525] text-white text-sm">
-        &copy; 2025 Company Checker Ltd. | All rights reserved.
-      </footer>
     </div>
   );
 }
