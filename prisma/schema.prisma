@@ -16,8 +16,7 @@ datasource db {
 model Company {
   id                  Int      @id @default(autoincrement())
   name                String
-  registrationNumber  String
-  taxId               String
+  uen                 String @unique
   status              String
   incorporationDate   DateTime
 

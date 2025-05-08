@@ -22,8 +22,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
       title: 'Basic Company Information',
       data: [
         ['Company Name', company.name],
-        ['Registration Number', company.registrationNumber],
-        ['Tax ID', company.taxId],
+        ['Registration Number', company.uen],
         ['Status', company.status],
         ['Incorporation Date', company.incorporationDate.toDateString()],
       ],
@@ -64,7 +63,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     <div className="bg-[#f9f9f9] min-h-screen text-[#333]">
       <header className="bg-[#C92228] text-white p-6 text-center">
         <h1 className="text-3xl font-bold">Company Details</h1>
-        <p className="mt-2">Results for Registration ID: <strong>{company.registrationNumber}</strong></p>
+        <p className="mt-2">Results for : <strong>{company.uen}</strong></p>
       </header>
 
       <main className="max-w-4xl mx-auto my-8 bg-white p-6 rounded-2xl shadow-md">

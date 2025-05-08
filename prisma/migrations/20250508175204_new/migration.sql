@@ -1,8 +1,8 @@
 -- CreateTable
 CREATE TABLE "Company" (
-    "id" SERIAL NOT NULL,
+    "id" INTEGER NOT NULL DEFAULT 201803596,
     "name" TEXT NOT NULL,
-    "registrationNumber" TEXT NOT NULL,
+    "uen" TEXT NOT NULL,
     "taxId" TEXT NOT NULL,
     "status" TEXT NOT NULL,
     "incorporationDate" TIMESTAMP(3) NOT NULL,

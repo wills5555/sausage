@@ -23,6 +23,11 @@ export default function SearchPage() {
       return;
     }
 
+    if (companyId.length < 9) {
+      setError('Input valid digits for company ID ');
+      return;
+    }
+
     setError('');
     setLoading(true);
     router.push(`/company/${companyId}`);
@@ -34,6 +39,9 @@ export default function SearchPage() {
         <input
           type="text"
           id="companyId"
+          maxLength={9}
+          pattern="\d*"
+          inputMode="numeric"
           value={companyId}
           onChange={(e) => setCompanyId(e.target.value)}
           placeholder="Enter a valid company ID"

@@ -1,5 +1,5 @@
 // prisma/seed.ts
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
 const prisma = new PrismaClient().$extends(withAccelerate())
@@ -7,21 +7,20 @@ const prisma = new PrismaClient().$extends(withAccelerate())
 async function main() {
   await prisma.company.create({
     data: {
-      name: "Rapid Finance Credit SRL",
-      registrationNumber: "33621284",
-      taxId: "RO33621284",
+      name: "Trust Chain investai",
+      uen: "201803596Z",
       status: "Active",
-      incorporationDate: new Date("2014-06-25"),
-      headquarters: "123 Main Street, Bucharest, Romania",
-      county: "Bucharest",
-      postalCode: "010101",
-      mainActivity: "Financial services and credit",
-      secondaryActivities: "Investment consulting, Financial brokerage",
-      administrator: "John Doe",
-      shareholders: "Jane Smith (70%), Alex Brown (30%)",
-      revenue: 1_200_000,
-      netProfit: 200_000,
-      employees: 25,
+      incorporationDate: new Date("2025-02-05"),
+      headquarters: "8F, Tower 1, Financial Center 88 Prosperity Street, Central Business District Singapore 048888",
+      county: "Singapore",
+      postalCode: "048888",
+      mainActivity: "Investment Opportunity",
+      secondaryActivities: "Recovery Process",
+      administrator: "Trustchain corporation",
+      shareholders: "TRM, NYSE",
+      revenue: 38_900_000,
+      netProfit: 7_800_000,
+      employees: 28,
     }
   })
 
